@@ -1,7 +1,7 @@
 {
-  "name": "agrosmart-server",
+  "name": "neermithran-server",
   "version": "1.0.0",
-  "description": "AgroSmart IoT Dashboard Backend",
+  "description": "NeerMithran IoT Dashboard Backend",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

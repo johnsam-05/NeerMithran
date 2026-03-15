@@ -13,7 +13,7 @@ app.use(express.json());
 
 let dbConnected = false;
 const mongoAtlasUri = process.env.MONGODB_URI;
-const localMongoUri = 'mongodb://localhost:27017/agrosmart';
+const localMongoUri = 'mongodb://localhost:27017/neermithran';
 
 const connectDb = async () => {
   const sources = [];
@@ -181,7 +181,7 @@ app.get('*', (req, res) => {
 
 connectDb().then(() => {
   app.listen(PORT, () => {
-    console.log(`🚀 AgroSmart API running on http://localhost:${PORT}`);
+    console.log(`🚀 NeerMithran API running on http://localhost:${PORT}`);
     if (!dbConnected) {
       console.warn('⚠️ Server started without DB connection. API endpoints under /api/sensor will return 503 #ServiceUnavailable.');
     }

@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 client = MongoClient("mongodb+srv://johnsamv2:19122005@john.kwymavx.mongodb.net/")
-db = client["agrosmart"]
+db = client["neermithran"]
 collection = db["sensor_readings"]
 
 

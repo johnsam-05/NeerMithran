@@ -18,7 +18,7 @@ GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 client_ai = genai.Client(api_key=GEMINI_API_KEY)
 
 client_db = MongoClient(MONGO_URI)
-db = client_db['agrosmart']
+db = client_db['neermithran']
 sensor_collection = db['sensor_readings']
 users_collection = db['users'] 
 

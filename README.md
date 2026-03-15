@@ -2,7 +2,7 @@
 
 ## 🌱 Project Overview
 
-`NeerMithran` is an end-to-end smart irrigation and farm monitoring system (AgroSmart) built with:
+`NeerMithran` is an end-to-end smart irrigation and farm monitoring system built with:
 - Arduino/serial sensor stream ingest + control logic (`Controller/test.py`)
 - Remote chat assistant via Telegram + AI-driven insights (`Controller/bot.py`)
 - Node.js + Express API server with MongoDB persistence (`Dashboard/server/*`)
@@ -16,7 +16,7 @@ The goal is to provide farmers with real-time sensor data, weather-aware irrigat
    - Reads sensor values from `COM4` serial (soil moisture, temperature, humidity, distance, voltage)
    - Fetches weather forecast from OpenWeatherMap for decision logic
    - Controls pump relay (ON/OFF) via serial write
-   - Saves readings + computed weather advisory to MongoDB `agrosmart.sensor_readings`
+   - Saves readings + computed weather advisory to MongoDB `neermithran.sensor_readings`
 
 2. `Controller/bot.py`
    - Telegram bot with `/start`, `/getdata`, and conversational fallback
@@ -91,7 +91,7 @@ The goal is to provide farmers with real-time sensor data, weather-aware irrigat
 
 ## 📝 Commit Message Suggestion
 
-- `feat: add complete README and project documentation for AgroSmart telemetry + dashboard`
+- `feat: add complete README and project documentation for NeerMithran telemetry + dashboard`
 
 ---
 

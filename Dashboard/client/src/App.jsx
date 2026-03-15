@@ -43,7 +43,7 @@ export default function App() {
   if (loading) return (
     <div className="loading-wrap">
       <div className="spinner" />
-      <div className="loading-msg">Connecting to AgroSmart sensors…</div>
+      <div className="loading-msg">Connecting to NeerMithran sensors…</div>
     </div>
   );
 
