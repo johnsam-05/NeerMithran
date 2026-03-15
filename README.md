@@ -12,13 +12,20 @@ The goal is to provide farmers with real-time sensor data, weather-aware irrigat
 
 ## 🧩 Architecture
 
-1. `Controller/test.py`
-   - Reads sensor values from `COM4` serial (soil moisture, temperature, humidity, distance, voltage)
+1. `Controller/Nano.ino` (Arduino Nano)
+   - Reads DHT11 for temperature + humidity
+   - Reads ultrasonic sensor (`trigPin=9`, `echoPin=10`) for water tank distance / fill percentage
+   - Reads analog voltage (`A1`) and soil moisture (`A3`)
+   - Supports serial relay commands (`1` / `0` on pin `8`) and reports relay state
+   - Serial output format: `T:<temp>,H:<hum>,D:<tank_pct>,V:<voltage>,S:<soil_pct>,R:<relay>`
+
+2. `Controller/test.py`
+   - Opens serial on `COM4` to consume Nano messages and parse sensor fields
    - Fetches weather forecast from OpenWeatherMap for decision logic
-   - Controls pump relay (ON/OFF) via serial write
+   - Controls pump relay (ON/OFF) via serial command writes
    - Saves readings + computed weather advisory to MongoDB `neermithran.sensor_readings`
 
-2. `Controller/bot.py`
+3. `Controller/bot.py`
    - Telegram bot with `/start`, `/getdata`, and conversational fallback
    - Connects to same MongoDB for latest readings and user tracking
    - Integrates Google Gemini AI API for natural-language farm assistance
